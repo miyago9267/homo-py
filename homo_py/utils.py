@@ -18,7 +18,7 @@ def get_min_div(num: int, nums_reversed: list) -> int:
     Returns:
         int: The largest divisor less than or equal to `num`.
     """
-    for i in reversed(nums_reversed):
+    for i in nums_reversed:
         if num >= int(i):
             return int(i)
     return None
@@ -60,6 +60,9 @@ def demolish(num: str, Nums: dict, nums_reversed: list) -> str:
 
     # Get the largest divisor of num and decompose recursively
     div = get_min_div(num, nums_reversed)
+
+    if div is None or div == 0 or div > num or (num // div) == 0 or (num % div) == num:
+        return str(num)
 
     return (
         f"{div}*({demolish(str(num // div), Nums, nums_reversed)})+({demolish(str(num % div), Nums, nums_reversed)})"

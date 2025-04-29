@@ -37,7 +37,11 @@ def homo(num: int or float or str) -> str:
 
     # Calculate all available divisors from `NUMS`, filtering and sorting them in descending order
     nums_reversed = sorted(
-        [int(x) for x in NUMS.keys() if isinstance(x, int) and x > 0], reverse=True
+        [
+            int(x)
+            for x in NUMS.keys()
+            if x.isascii() and x.isdigit() and int(x) > 0
+        ], reverse=True
     )
 
     # Generate and format the expression for the input number

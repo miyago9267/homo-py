@@ -14,6 +14,10 @@ def test_homo_float():
     result = homo(1145.14)
     assert "114514" in result
 
+def test_homo_min_one():
+    result = homo(114513)
+    assert "114*514+11*4514+114*51+4-1-1+451-4" in result
+
 def test_homo_zero():
     result = homo(0)
     assert result == "(1-1)*4514"
