@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "python-homo-generator"
-version = "1.0.0"
+version = "1.1.0"
 description = "A tool that breaks down any number into a formula consisting of 114514. Make by python"
 authors = ["miyago9267 <miyagomizugen@gmail.com>"]
 license = "MIT"
